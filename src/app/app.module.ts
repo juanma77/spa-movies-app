@@ -10,6 +10,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     MovieComponent,
     CardsComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
