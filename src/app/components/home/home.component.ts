@@ -10,14 +10,35 @@ export class HomeComponent implements OnInit {
 
   public popularMovies: any[] = [];
 
+  public loading: boolean;
+  public error: boolean; 
+
+  public errorMessage: string; 
+
 
   constructor( private moviesService: MovieService ) {
 
+    this.loading = true; 
+    this.error = false; 
 
     this.moviesService.getPopularMovies().subscribe( (resp: any) => {
 
       this.popularMovies = resp;
+
       console.log( this.popularMovies );
+
+      this.loading = false; 
+
+
+    }, (err) =>{
+
+      this.error = true;
+      console.log( err );
+
+      this.errorMessage = err.error;
+      
+      
+
 
 
     });
