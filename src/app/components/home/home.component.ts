@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
     this.moviesService.getPopularMovies().subscribe( (resp: any) => {
 
-      this.popularMovies = resp;
+      this.popularMovies = resp.results;
 
       console.log( this.popularMovies );
 
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
       this.error = true;
       console.log( err );
 
-      this.errorMessage = err.error;
+      this.errorMessage = err.statusText;
       
       
 

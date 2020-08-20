@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-movie',
@@ -7,7 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieComponent implements OnInit {
 
-  constructor() { }
+  public movie: any = {};
+
+  public loading: boolean;
+
+  constructor( private router: ActivatedRoute, private movieService: MovieService ) {
+
+    this.loading = true;
+
+    this.router.params.subscribe( params =>{
+
+      console.log( params['id'] );
+
+
+    })
+
+
+
+  }
 
   ngOnInit() {
   }

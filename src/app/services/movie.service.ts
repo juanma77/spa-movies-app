@@ -19,4 +19,25 @@ export class MovieService {
 
   }
 
+  public searchMovie( texto: string ) {
+
+
+    let url = `${ this.url }/search/movie?query=${ texto }&sort_by=popularity.desc&api_key=${ this.apiKey }&language=es`;
+
+
+  }
+
+  public getNowAvailables() {
+
+
+    let desde = new Date();
+    let hasta = new Date();
+
+    hasta.setDate( hasta.getDate() + 7 );
+
+
+  }
+
+  
+
 }
